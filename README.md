@@ -4,7 +4,7 @@ InSPyReNet background removal for the Extras tab of [Forge Neo](https://github.c
 
 It uses the [transparent-background](https://github.com/plemeri/transparent-background) library, the same one behind the ComfyUI Inspyrenet node.
 
-It has been tested against Forge Neo 2.29.1. Other webuis are untested, and as usual may break with later versions of Neo. Check for updates if you encounter any issues with this extension.
+It has been tested against Forge Neo 2.29.1. Other webuis are untested, and as usual this extension may break with later versions of Neo. Check for updates if you encounter any issues with this extension.
 
 ## Install
 
