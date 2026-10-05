@@ -2,9 +2,9 @@
 
 InSPyReNet background removal for the Extras tab of [Forge Neo](https://github.com/Haoming02/sd-webui-forge-classic/tree/neo).
 
-It uses the [transparent-background](https://github.com/plemeri/transparent-background) library, the same one behind the ComfyUI Inspyrenet node, so the results are the same.
+It uses the [transparent-background](https://github.com/plemeri/transparent-background) library, the same one behind the ComfyUI Inspyrenet node.
 
-**Status: early version.** It has been tested against Forge Neo's Python environment, but has seen little use in a running webui so far. Other webuis are untested.
+It has been tested against Forge Neo 2.29.1. Other webuis are untested, and as usual may break with later versions of Neo. Check for updates if you encounter any issues with this extension.
 
 ## Install
 
@@ -16,19 +16,19 @@ The model weights (about 367 MB) are downloaded on first use.
 
 ## Use
 
-Open the **Extras** tab and expand **InSPyReNet background removal**. Expanding the section enables it.
+Open the **Extras** tab and expand **InSPyReNet background removal**.
+
+The network keeps the main subject of the image, usually the character(s), and removes everything else.
 
 | Setting | What it does |
 |---|---|
-| Output: Transparent | Cut-out with an alpha channel. |
-| Output: Mask | Black-and-white mask of the foreground. |
-| Output: White background | Foreground on white. |
-| Output: Custom color | Foreground on a color you pick. |
+| Output: Transparent | The character(s) cut out, with a transparent background. |
+| Output: Mask | Black-and-white mask: character(s) white, background black. |
+| Output: White background | The character(s) on white. |
+| Output: Custom color | The character(s) on a color you pick. |
 | Threshold | At 0 the edges are soft and edge colors are cleaned up. Above 0 the cut is hard: every pixel is either fully kept or fully removed. |
 
-Transparent output needs a file format that stores transparency. With the webui's image format set to `png` it is kept; with `jpg` it is lost.
-
-Processing needs about 3 GB of VRAM. The extension asks Forge to free memory first, and moves its network off the GPU again after every image.
+Transparent output needs a file format that stores transparency, make sure the webui's image format is set to `png`, saving the result as `jpg` will remove the alpha channel. You can still use the color background options in that case.
 
 ## Where the weights go
 
